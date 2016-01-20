@@ -11,6 +11,7 @@ var Key = React.createClass({
   },
 
   componentDidMount: function () {
+    this.note = new Note(TONES[this.props.noteName]);
     KeyStore.addListener(this._keysChanged);
   },
 
@@ -19,11 +20,10 @@ var Key = React.createClass({
   },
 
   _keysChanged: function () {
-    var newNote = new Note(TONES[this.props.noteName]);
     if (KeyStore.all().includes(this.props.noteName)) {
-      newNote.start();
+      this.note.start();
     } else {
-      newNote.stop();
+      this.note.stop();
     }
     this.setState({ keys: KeyStore.all() });
   },

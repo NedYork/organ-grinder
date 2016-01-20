@@ -14,9 +14,11 @@ KeyStore.__onDispatch = function (payload) {
     _keys.push(payload.noteName);
     KeyStore.__emitChange();
   } else if (payload.actionType === "UP") {
-    // var key = _keys.indexOf(payload.noteName);
+    console.log("store working");
+    console.log(_keys);
     var keyIdx = _keys.indexOf(payload.noteName);
     _keys.splice(keyIdx, 1);
+    console.log(_keys);
     // console.log("key released");
     KeyStore.__emitChange();
   }

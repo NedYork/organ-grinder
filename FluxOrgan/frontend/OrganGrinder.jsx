@@ -3,13 +3,15 @@ var React = require('react');
 var Dispatcher = require('./dispatcher/dispatcher');
 var KeyListener = require('./util/KeyListener');
 var Key = require('./components/key');
+var Organ = require('./components/organ');
 
 var OrganGrinder = React.createClass({
 
   render: function () {
     return (
       <div>
-        <Key noteName="Ds"/>
+        <Organ/>
+        // <Key noteName={Organ}/>
       </div>
     );
   }

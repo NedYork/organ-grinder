@@ -28,7 +28,6 @@ var KeyListener = {
       var key = e.keyCode;
       var noteName = Mapping[key];
       KeyActions.keyReleased(noteName);
-      console.log("listener working")
     });
   }
 };
