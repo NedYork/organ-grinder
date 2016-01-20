@@ -2,12 +2,14 @@ var ReactDOM = require('react-dom');
 var React = require('react');
 var Dispatcher = require('./dispatcher/dispatcher');
 var KeyListener = require('./util/KeyListener');
+var Key = require('./components/key');
+
 var OrganGrinder = React.createClass({
 
   render: function () {
     return (
       <div>
-
+        <Key noteName="Ds"/>
       </div>
     );
   }

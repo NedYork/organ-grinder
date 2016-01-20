@@ -17,6 +17,7 @@ KeyStore.__onDispatch = function (payload) {
     // var key = _keys.indexOf(payload.noteName);
     var keyIdx = _keys.indexOf(payload.noteName);
     _keys.splice(keyIdx, 1);
+    // console.log("key released");
     KeyStore.__emitChange();
   }
 };
