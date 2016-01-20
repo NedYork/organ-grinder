@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var KeyStore = require('../stores/KeyStore');
-var KeyActions =
+var KeyActions = require('../actions/key_actions');
 
 var Mapping = {
   48: "C",
@@ -20,15 +20,14 @@ var KeyListener = {
       var key = e.keyCode;
       var noteName = Mapping[key];
       KeyActions.keyPressed(noteName);
-      KeyStore._keys.push(key);
     });
   },
 
   keyup: function () {
     $(document).on("keyup", function (e) {
       var key = e.keyCode;
-      var keyIdx = KeyStore._keys.indexOf(key);
-      KeyStore._keys.splice(keyIdx, 1);
+      var noteName = Mapping[key];
+      KeyActions.keyReleased(noteName);
     });
   }
 };

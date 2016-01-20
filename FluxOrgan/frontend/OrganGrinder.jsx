@@ -15,7 +15,7 @@ var OrganGrinder = React.createClass({
 });
 
 KeyListener.keydown();
-KeyListener.keydown();
+KeyListener.keyup();
 
 
 // $(document).on("keydown", function (e) {
