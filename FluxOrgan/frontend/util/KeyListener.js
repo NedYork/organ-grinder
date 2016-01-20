@@ -19,7 +19,9 @@ var KeyListener = {
     $(document).on("keydown", function (e) {
       var key = e.keyCode;
       var noteName = Mapping[key];
-      KeyActions.keyPressed(noteName);
+      if (typeof noteName !== "undefined") {
+        KeyActions.keyPressed(noteName);
+      }
     });
   },
 
